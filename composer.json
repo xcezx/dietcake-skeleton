@@ -1,0 +1,29 @@
+{
+    "name": "xcezx/skeleton",
+    "description": "skeleton",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "xcezx",
+            "email": "main.xcezx@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/xcezx/dietcake.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/xcezx/dietcake_proxy-json-view.git"
+        }
+    ],
+    "require": {
+        "dietcake/dietcake": "dev-composerize",
+        "maekawa-t/dietcake_proxy-json-view": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    }
+}

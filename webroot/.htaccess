@@ -1,0 +1,25 @@
+DirectoryIndex frontend.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^$ frontend.php?dc_action=top/index [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !\.(css|less|gif|jpg|png|js|ico)$
+    RewriteRule ^main.php/(.*)$ frontend.php?dc_action=$1 [QSA,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !\.(css|less|gif|jpg|png|js|ico)$
+    RewriteRule ^(.*)$ frontend.php?dc_action=$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/gif "access plus 10 year"
+    ExpiresByType image/png "access plus 10 year"
+    ExpiresByType image/jpg "access plus 10 year"
+    ExpiresByType image/jpeg "access plus 10 year"
+    FileETag none
+</IfModule>
